@@ -6,13 +6,13 @@
 
 	<parent>
 		<groupId>adam.dev</groupId>
-		<artifactId>gisma-db-services</artifactId>
+		<artifactId>adam-db-services</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>parser-service</artifactId>
 	<name>parser-service</name>
-	<description>Parser microservice in Gisma DB services</description>
+	<description>Parser microservice in adam DB services</description>
 
 	<dependencies>
 		<dependency>

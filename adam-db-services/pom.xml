@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>adam.dev</groupId>
-    <artifactId>gisma-db-services</artifactId>
+    <artifactId>adam-db-services</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>gisma-db-services</name>
-    <description>Parent project for Gisma DB services</description>
+    <name>adam-db-services</name>
+    <description>Parent project for adam DB services</description>
 
     <modules>
         <module>parser-service</module>
