@@ -1,0 +1,29 @@
+# Ignore Maven target folders
+target/
+*/target/
+*/.idea/
+
+# Ignore build output
+out/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore Maven wrapper files
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore IDE specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.sublime-workspace
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
