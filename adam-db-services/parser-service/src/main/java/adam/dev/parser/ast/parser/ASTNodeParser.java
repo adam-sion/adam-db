@@ -15,7 +15,7 @@ public class ASTNodeParser {
 
     public ASTNode parse(List<String> tokens) {
         ASTNode astNode = Keyword.fromString(tokens.get(0)).getAccept()
-                .apply(visitor, tokens.subList(1, tokens.size()));
+                .apply(visitor, tokens);
 
         return astNode;
     }
