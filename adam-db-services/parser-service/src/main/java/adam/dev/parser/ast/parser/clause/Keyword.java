@@ -1,27 +1,30 @@
 package adam.dev.parser.ast.parser.clause;
 
+import adam.dev.parser.ast.ASTNode;
+import adam.dev.parser.ast.node.clause.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiFunction;
 
 @AllArgsConstructor
 @Getter
 public enum Keyword {
 
-    SELECT("SELECT", new SelectParser()),
+    SELECT("SELECT", (visitor, tokens)-> visitor.visit(tokens, new SelectNode())),
 
-    UPDATE("UPDATE", new UpdateParser()),
+    UPDATE("UPDATE", (visitor, tokens)-> visitor.visit(tokens, new UpdateNode())),
 
-    INSERT("INSERT", new InsertParser()),
+    INSERT("INSERT", (visitor, tokens)-> visitor.visit(tokens, new InsertNode())),
 
-    DELETE("DELETE", new DeleteParser()),
+    DELETE("DELETE", (visitor, tokens)-> visitor.visit(tokens, new DeleteNode())),
 
-    CREATE("CREATE", new CreateParser());
+    CREATE("CREATE", (visitor, tokens)-> visitor.visit(tokens, new CreateNode()));
 
     private final String name;
 
-    private final ClauseParser<?> clauseParser;
+    public final BiFunction<ClauseParserVisitor, List<String>, ASTNode> accept;
 
     public static Keyword fromString(String name) {
     return Arrays.stream(Keyword.values()).filter(keyword -> keyword.getName().equalsIgnoreCase(name))
